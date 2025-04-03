@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import UserContext from "../context/UserContext";
 
-const UserList = ({ users, setSelectedUser }) => {
+const UserList = () => {
+  const { users, setSelectedUser } = useContext(UserContext);
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredUsers = users.filter(
